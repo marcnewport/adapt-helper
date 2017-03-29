@@ -1,0 +1,30 @@
+{
+    "context-menu": {
+        "atom-text-editor": [
+            {
+                "label": "Adapt helper: clean text",
+                "command": "adapt-helper:clean-text"
+            },
+            {
+                "label": "Adapt helper: paste as clean text",
+                "command": "adapt-helper:paste-clean-text"
+            }
+        ]
+    },
+    "menu": [
+        {
+            "label": "Packages",
+            "submenu": [
+                {
+                    "label": "adapt-helper",
+                    "submenu": [
+                        {
+                            "label": "Toggle",
+                            "command": "adapt-helper:toggle"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

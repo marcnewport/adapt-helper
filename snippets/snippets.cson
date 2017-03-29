@@ -1,0 +1,901 @@
+'.source.json':
+
+    # ----------------------------------
+    # Content object
+    # ----------------------------------
+    'Adapt content object':
+        'prefix': 'content object'
+        'body': """
+{
+    "_id": "${1:co-00}",
+    "_parentId": "course",
+    "_type": "page",
+    "_classes": "",
+    "title": "${2:TITLE}",
+    "displayTitle": "${2:TITLE}",
+    "pageBody": "${3:PAGE_BODY}",
+    "body": "${4:BODY}",
+    "_graphic": {
+        "src": "course/en/images/${1:co-00}.jpg",
+        "alt": ""
+    },
+    "linkText": "View",
+    "durationLabel": "Duration:",
+    "duration": "${5:5} mins"
+}
+        """
+
+    # ----------------------------------
+    # Article
+    # ----------------------------------
+    'Adapt article':
+        'prefix': 'article'
+        'body': """
+{
+    "_id": "${1:a-00}",
+    "_parentId": "${2:co-00}",
+    "_type": "article",
+    "_classes": "",
+    "title": "${1:a-00}",
+    "displayTitle": "",
+    "body": ""
+}
+        """
+
+    # ----------------------------------
+    # Block
+    # ----------------------------------
+    'Adapt block':
+        'prefix': 'block'
+        'body': """
+{
+    "_id": "${1:b-00}",
+    "_parentId": "${2:a-00}",
+    "_type": "block",
+    "_classes": "$3",
+    "title": "${1:b-00}",
+    "displayTitle": "",
+    "body": ""
+}
+        """
+
+    # ----------------------------------
+    # Components
+    # ----------------------------------
+
+    # ----------------------------------
+    # Accordion
+    # ----------------------------------
+    'Adapt accordion component':
+        'prefix': 'accordion'
+        'body': """
+{
+	"_id": "${1:c-00}",
+	"_parentId": "${2:b-00}",
+	"_type": "component",
+	"_component": "accordion",
+	"_classes": "",
+	"_layout": "${3:full}",
+	"title": "${4:TITLE}",
+	"displayTitle": "${4:TITLE}",
+	"body": "${5:BODY}",
+	"instruction": "${6:INSTRUCTION}",
+	"_items": [
+		{
+			"title": "${7:ITEM_TITLE}",
+			"body": "${8:ITEM_BODY}",
+			"_graphic": {
+				"src": "course/en/images/${1:c-00}-001.jpg",
+				"alt": ""
+			},
+			"_classes": ""
+		},
+		{
+			"title": "${9:ITEM_TITLE}",
+			"body": "${10:ITEM_BODY}",
+			"_graphic": {
+				"src": "course/en/images/${1:c-00}-002.jpg",
+				"alt": ""
+			},
+			"_classes": ""
+		},
+		{
+			"title": "${11:ITEM_TITLE}",
+			"body": "${12:ITEM_BODY}",
+			"_graphic": {
+				"src": "course/en/images/${1:c-00}-003.jpg",
+				"alt": ""
+			},
+			"_classes": ""
+		}
+	],
+	"_pageLevelProgress": {
+		"_isEnabled": true
+	}
+}
+        """
+
+    # ----------------------------------
+    # Blank
+    # ----------------------------------
+    'Adapt blank component':
+        'prefix': 'blank'
+        'body': """
+{
+    "_id": "${1:c-00}",
+    "_parentId": "${2:b-00}",
+    "_type": "component",
+    "_component": "blank",
+    "_classes": "",
+    "title": "${3:TITLE}",
+    "comment": "$4"
+}
+        """
+
+    # ----------------------------------
+    # Graphic
+    # ----------------------------------
+    'Adapt graphic component':
+        'prefix': 'graphic'
+        'body': """
+{
+    "_id": "${1:c-00}",
+    "_parentId": "${2:b-00}",
+    "_type": "component",
+    "_component": "graphic",
+    "_classes": "",
+    "_layout": "${3:full}",
+    "title": "${4:TITLE}",
+    "displayTitle": "${5:TITLE}",
+    "body": "${6:BODY}",
+    "instruction": "${7:INSTRUCTION}",
+    "_graphic": {
+        "large": "course/en/images/${1:c-00}.jpg",
+        "small": "course/en/images/${1:c-00}.jpg",
+        "alt": "",
+        "attribution": ""
+    },
+    "_pageLevelProgress": {
+        "_isEnabled": true
+    }
+}
+        """
+
+    # ----------------------------------
+    # GMCQ
+    # ----------------------------------
+    'Adapt gmcq component':
+        'prefix': 'gmcq'
+        'body': """
+{
+    "_id": "${1:c-00}",
+    "_parentId": "${2:b-00}",
+    "_type": "component",
+    "_component": "gmcq",
+    "_classes": "",
+	"_layout": "${3:full}",
+    "_attempts": ${4:1},
+    "_shouldDisplayAttempts": false,
+    "_questionWeight": 1,
+    "_isRandom": ${5:false},
+    "_selectable": ${6:1},
+    "_canShowModelAnswer": true,
+    "_recordInteraction": true,
+    "_columns": ${7:3},
+	"title": "${8:TITLE}",
+	"displayTitle": "${8:TITLE}",
+	"body": "${9:BODY}",
+    "instruction": "${10:INSTRUCTION}",
+    "_items": [
+        {
+            "text": "${11:OPTION}",
+            "_shouldBeSelected": ${12:true},
+            "_graphic": {
+                "alt": "",
+                "large": "course/en/images/${1:c-00}-001-large.gif",
+                "small": "course/en/images/${1:c-00}-001-small.gif"
+            }
+        },
+        {
+            "text": "${13:OPTION}",
+            "_shouldBeSelected": ${14:false},
+            "_graphic": {
+                "alt": "",
+                "large": "course/en/images/${1:c-00}-002-large.gif",
+                "small": "course/en/images/${1:c-00}-002-small.gif"
+            }
+        },
+        {
+            "text": "${15:OPTION}",
+            "_shouldBeSelected": ${16:false},
+            "_graphic": {
+                "alt": "",
+                "large": "course/en/images/${1:c-00}-003-large.gif",
+                "small": "course/en/images/${1:c-00}-003-small.gif"
+            }
+        }
+    ],
+    "_feedback":{
+        "correct": "${16:CORRECT}",
+        "_incorrect": {
+            "notFinal": "",
+            "final": "${17:INCORRECT}"
+        },
+        "_partlyCorrect": {
+            "notFinal": "",
+            "final": "${18:PARTLY}"
+        }
+    },
+    "_buttons": {
+        "_submit": {
+            "buttonText": "Submit",
+            "ariaLabel": "Select here to submit your answer."
+        },
+        "_reset": {
+            "buttonText": "Reset",
+            "ariaLabel": ""
+        },
+        "_showCorrectAnswer": {
+            "buttonText": "Correct Answer",
+            "ariaLabel": ""
+        },
+        "_hideCorrectAnswer": {
+            "buttonText": "My Answer",
+            "ariaLabel": ""
+        },
+        "_showFeedback": {
+            "buttonText": "Show feedback",
+            "ariaLabel": ""
+        },
+        "remainingAttemptsText": "attempts remaining",
+        "remainingAttemptText": "final attempt"
+    }
+}
+        """
+
+    # ----------------------------------
+    # Hotgraphic
+    # ----------------------------------
+    'Adapt hotgraphic component':
+        'prefix': 'hotgraphic'
+        'body': """
+{
+    "_id": "${1:c-00}",
+    "_parentId": "${2:b-00}",
+    "_type": "component",
+    "_component": "hotgraphic",
+    "_classes": "",
+    "_layout": "${3:full}",
+    "_setCompletionOn": "allItems",
+    "_canCycleThroughPagination": false,
+    "_hidePagination": false,
+    "_useGraphicsAsPins": false,
+    "title": "${4:TITLE}",
+	"displayTitle": "${5:TITLE}",
+	"body": "${6:BODY}",
+    "instruction": "${7:INSTRUCTION}",
+    "mobileInstruction": "${8:MOBILE_INSTRUCTION}",
+    "_graphic": {
+        "src": "course/en/images/${1:c-00}.jpg",
+        "alt": ""
+    },
+    "_items": [
+        {
+            "title": "${9:ITEM_TITLE}",
+            "body": "${10:ITEM_BODY}",
+            "_graphic": {
+                "src": "course/en/images/${1:c-00}-001.jpg",
+                "alt": "",
+                "_classes": ""
+            },
+            "strapline": "${9:ITEM_STRAPLINE}",
+            "_classes": "",
+            "_top": 10,
+            "_left": 10
+        },
+        {
+            "title": "${11:ITEM_TITLE}",
+            "body": "${12:ITEM_BODY}",
+            "_graphic": {
+                "src": "course/en/images/${1:c-00}-002.jpg",
+                "alt": "",
+                "_classes": ""
+            },
+            "strapline": "${11:ITEM_STRAPLINE}",
+            "_classes": "",
+            "_top": 10,
+            "_left": 20
+        },
+        {
+            "title": "${13:ITEM_TITLE}",
+            "body": "${14:ITEM_BODY}",
+            "_graphic": {
+                "src": "course/en/images/${1:c-00}-003.jpg",
+                "alt": "",
+                "_classes": ""
+            },
+            "strapline": "${13:ITEM_STRAPLINE}",
+            "_classes": "",
+            "_top": 10,
+            "_left": 30
+        }
+    ],
+    "_pageLevelProgress": {
+        "_isEnabled": true
+    }
+}
+        """
+
+    # ----------------------------------
+    # Matching
+    # ----------------------------------
+    'Adapt matching component':
+        'prefix': 'matching'
+        'body': """
+{
+    "_id": "${1:c-00}",
+    "_parentId": "${2:b-00}",
+    "_type": "component",
+    "_component": "matching",
+    "_classes": "",
+    "_layout": "${3:full}",
+    "_attempts": ${4:1},
+    "_questionWeight": 1,
+    "_canShowModelAnswer": true,
+    "_shouldDisplayAttempts": false,
+    "_isRandom": true,
+    "title": "${5:TITLE}",
+    "displayTitle": "${5:TITLE}",
+    "body": "${6:BODY}",
+    "instruction": "${7:INSTRUCTION}",
+    "placeholder": "Select an option",
+    "_items": [
+        {
+            "text": "${8:QUESTION}",
+            "_options": [
+                {
+                    "text": "${9:OPTION}",
+                    "_isCorrect": ${10:true}
+                },
+                {
+                    "text": "${11:OPTION}",
+                    "_isCorrect": ${12:false}
+                },
+                {
+                    "text": "${13:OPTION}",
+                    "_isCorrect": ${14:false}
+                },
+                {
+                    "text": "${15:OPTION}",
+                    "_isCorrect": ${16:false}
+                }
+            ]
+        },
+        {
+            "text": "${16:QUESTION}",
+            "_options": [
+                {
+                    "text": "${17:OPTION}",
+                    "_isCorrect": ${18:true}
+                },
+                {
+                    "text": "${19:OPTION}",
+                    "_isCorrect": ${20:false}
+                },
+                {
+                    "text": "${21:OPTION}",
+                    "_isCorrect": ${22:false}
+                },
+                {
+                    "text": "${23:OPTION}",
+                    "_isCorrect": ${24:false}
+                }
+            ]
+        }
+    ],
+    "_feedback": {
+        "correct": "${25:CORRECT}",
+        "_partlyCorrect": {
+            "notFinal": "",
+            "final": "${26:PARTLY}"
+        },
+        "_incorrect": {
+            "notFinal": "",
+            "final": "${27:INCORRECT}"
+        }
+    },
+    "_pageLevelProgress": {
+        "_isEnabled": true
+    }
+}
+        """
+
+    # ----------------------------------
+    # Media
+    # ----------------------------------
+    'Adapt media component':
+        'prefix': 'media'
+        'body': """
+{
+    "_id": "${1:c-00}",
+    "_parentId": "${2:b-00}",
+    "_type": "component",
+    "_component": "media",
+    "_classes": "",
+    "_layout": "${3:full}",
+    "_setCompletionOn": "play",
+    "_useClosedCaptions": true,
+    "_allowFullScreen": true,
+    "title": "${4:TITLE}",
+    "displayTitle": "${4:TITLE}",
+    "body": "${5:BODY}",
+    "instruction": "${6:INSTRUCTION}",
+    "_media": {
+        "mp4": "course/en/video/${1:c-00}.mp4",
+        "poster": "course/en/video/${1:c-00}.jpg"
+    },
+    "_pageLevelProgress": {
+        "_isEnabled": true
+    }
+}
+        """
+
+    # ----------------------------------
+    # Multiple choice question
+    # ----------------------------------
+    'Adapt multiple choice question component':
+        'prefix': 'mcq'
+        'body': """
+{
+    "_id": "${1:c-00}",
+    "_parentId": "${2:b-00}",
+    "_type": "component",
+    "_component": "mcq",
+    "_classes": "",
+    "_layout": "${3:full}",
+    "_attempts": ${4:1},
+    "_shouldDisplayAttempts": false,
+    "_questionWeight": 1,
+    "_isRandom": true,
+    "_selectable": ${5:1},
+    "_canShowModelAnswer": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "title": "${6:TITLE}",
+    "displayTitle": "${6:TITLE}",
+    "body": "${7:BODY}",
+    "instruction": "${8:INSTRUCTION}",
+    "_items": [
+        {
+            "text": "${9:TEXT}",
+            "_shouldBeSelected": ${10:true}
+        },
+        {
+            "text": "${11:TEXT}",
+            "_shouldBeSelected": ${12:false}
+        },
+        {
+            "text": "${13:TEXT}",
+            "_shouldBeSelected": ${14:false}
+        },
+        {
+            "text": "${15:TEXT}",
+            "_shouldBeSelected": ${16:false}
+        }
+    ],
+    "_feedback": {
+        "correct": "${17:CORRECT}",
+        "_incorrect": {
+            "notFinal": "",
+            "final": "${18:INCORRECT}"
+        },
+        "_partlyCorrect": {
+            "notFinal": "",
+            "final": "${19:PARTIAL}"
+        }
+    },
+    "_buttons": {
+        "_submit": {
+            "buttonText": "Submit",
+            "ariaLabel": "Select here to submit your answer."
+        },
+        "_reset": {
+            "buttonText": "Reset",
+            "ariaLabel": ""
+        },
+        "_showCorrectAnswer": {
+            "buttonText": "Correct Answer",
+            "ariaLabel": ""
+        },
+        "_hideCorrectAnswer": {
+            "buttonText": "My Answer",
+            "ariaLabel": ""
+        },
+        "_showFeedback": {
+            "buttonText": "Show feedback",
+            "ariaLabel": ""
+        },
+        "remainingAttemptsText": "attempts remaining",
+        "remainingAttemptText": "final attempt"
+    },
+    "_pageLevelProgress": {
+        "_isEnabled": true
+    }
+}
+        """
+
+    # ----------------------------------
+    # Narrative
+    # ----------------------------------
+    'Adapt narrative component':
+        'prefix': 'narrative'
+        'body': """
+{
+    "_id": "${1:c-00}",
+    "_parentId": "${2:b-00}",
+    "_type": "component",
+    "_component": "narrative",
+    "_classes": "",
+    "_layout": "${3:full}",
+    "_setCompletionOn": "allItems",
+    "_hasNavigationInTextArea": false,
+    "title": "${4:TITLE}",
+    "displayTitle": "${4:TITLE}",
+    "body": "${5:BODY}",
+    "instruction": "${6:INSTRUCTION}",
+    "mobileInstruction": "${7:MOBILE_INSTRUCTION}",
+    "_items": [
+        {
+            "title": "${8:TITLE}",
+            "body": "${9:BODY}",
+            "_graphic": {
+                "src": "course/en/images/${1:c-00}-001.jpg",
+                "alt": ""
+            },
+            "strapline": "${8:STRAPLINE}"
+        },
+        {
+            "title": "${10:TITLE}",
+            "body": "${11:BODY}",
+            "_graphic": {
+                "src": "course/en/images/${1:c-00}-002.jpg",
+                "alt": ""
+            },
+            "strapline": "${10:STRAPLINE}"
+        },
+        {
+            "title": "${12:TITLE}",
+            "body": "${13:BODY}",
+            "_graphic": {
+                "src": "course/en/images/${1:c-00}-003.jpg",
+                "alt": ""
+            },
+            "strapline": "${12:STRAPLINE}"
+        }
+    ],
+    "_pageLevelProgress": {
+        "_isEnabled": true
+    }
+}
+        """
+
+    # ----------------------------------
+    # Slider
+    # ----------------------------------
+    'Adapt slider component':
+        'prefix': 'slider'
+        'body': """
+{
+    "_id": "${1:c-00}",
+    "_parentId": "${2:b-00}",
+    "_type": "component",
+    "_component": "slider",
+    "_classes": "",
+    "_layout": "${3:full}",
+    "title": "${4:TITLE}",
+    "displayTitle": "${4:TITLE}",
+    "body": "${5:BODY}",
+    "instruction": "${6:INSTRUCTION}",
+    "_attempts": ${7:1},
+    "_shouldDisplayAttempts": false,
+    "_questionWeight": 1,
+    "_canShowModelAnswer": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "_showNumber": true,
+    "_showScaleIndicator": true,
+    "_showScale": true,
+    "labelStart": "${8:incomplete}",
+    "labelEnd": "${9:complete}",
+    "_scaleStart": ${10:1},
+    "_scaleEnd": ${11:10},
+    "_scaleStep": 1,
+    "_correctAnswer": "",
+    "_correctRange": {
+        "_bottom": ${12:4},
+        "_top": ${13:9}
+    },
+    "_buttons": {
+        "_submit": {
+            "buttonText": "Submit",
+            "ariaLabel": "Select here to submit your answer."
+        },
+        "_reset": {
+            "buttonText": "Reset",
+            "ariaLabel": ""
+        },
+        "_showCorrectAnswer": {
+            "buttonText": "Correct Answer",
+            "ariaLabel": ""
+        },
+        "_hideCorrectAnswer": {
+            "buttonText": "My Answer",
+            "ariaLabel": ""
+        },
+        "_showFeedback": {
+            "buttonText": "Show feedback",
+            "ariaLabel": ""
+        },
+        "remainingAttemptsText": "attempts remaining",
+        "remainingAttemptText": "final attempt"
+    },
+    "_feedback": {
+        "correct": "${14:CORRECT}",
+        "_incorrect": {
+            "notFinal": "",
+            "final": "${15:INCORRECT}"
+        },
+        "_partlyCorrect": {
+            "notFinal": "",
+            "final": "${16:PARTIAL}"
+        }
+    },
+    "_pageLevelProgress": {
+        "_isEnabled": true
+    }
+}
+        """
+
+    # ----------------------------------
+    # Text
+    # ----------------------------------
+    'Adapt text component':
+        'prefix': 'text'
+        'body': """
+{
+    "_id": "${1:c-00}",
+    "_parentId": "${2:b-00}",
+    "_type": "component",
+    "_component": "text",
+    "_classes": "",
+    "_layout": "${3:full}",
+    "title": "${4:TITLE}",
+    "displayTitle": "${4:TITLE}",
+    "body": "${5:BODY}",
+    "instruction": "${6:INSTRUCTION}",
+    "_pageLevelProgress": {
+        "_isEnabled": true
+    }
+}
+        """
+
+    # ----------------------------------
+    # textinput
+    # ----------------------------------
+    'Adapt textinput component':
+        'prefix': 'textinput'
+        'body': """
+{
+    "_id": "${1:c-00}",
+    "_parentId": "${2:b-00}",
+    "_type": "component",
+    "_component": "textinput",
+    "_classes": "",
+    "_layout": "${3:full}",
+    "title": "${4:TITLE}",
+    "displayTitle": "${4:TITLE}",
+    "body": "${5:BODY}",
+    "instruction": "${6:INSTRUCTION}",
+    "_attempts": ${7:1},
+    "_shouldDisplayAttempts": false,
+    "_questionWeight": 10,
+    "_isRandom": false,
+    "_canShowModelAnswer": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "_allowsAnyCase": true,
+    "_allowsPunctuation": true,
+    "_items": [
+        {
+            "prefix": "${8:BEFORE}",
+            "suffix": "${9:AFTER}",
+            "_answers": [
+                "${10:ANSWER}"
+            ],
+            "placeholder": "Enter answer here"
+        },
+        {
+            "prefix": "${11:BEFORE}",
+            "suffix": "${12:AFTER}",
+            "_answers": [
+                "${13:ANSWER}"
+            ],
+            "placeholder": "Enter answer here"
+        },
+        {
+            "prefix": "${14:BEFORE}",
+            "suffix": "${15:AFTER}",
+            "_answers": [
+                "${16:ANSWER}"
+            ],
+            "placeholder": "Enter answer here"
+        }
+    ],
+    "_feedback": {
+        "correct": "${17:CORRECT}",
+        "_incorrect": {
+            "notFinal": "",
+            "final": "${18:INCORRECT}"
+        },
+        "_partlyCorrect": {
+            "notFinal": "",
+            "final": "${19:PARTIAL}"
+        }
+    },
+    "_buttons": {
+        "_submit": {
+            "buttonText": "Submit",
+            "ariaLabel": "Select here to submit your answer."
+        },
+        "_reset": {
+            "buttonText": "Reset",
+            "ariaLabel": ""
+        },
+        "_showCorrectAnswer": {
+            "buttonText": "Correct Answer",
+            "ariaLabel": ""
+        },
+        "_hideCorrectAnswer": {
+            "buttonText": "My Answer",
+            "ariaLabel": ""
+        },
+        "_showFeedback": {
+            "buttonText": "Show feedback",
+            "ariaLabel": ""
+        },
+        "remainingAttemptsText": "attempts remaining",
+        "remainingAttemptText": "final attempt"
+    },
+    "_pageLevelProgress": {
+        "_isEnabled": true
+    }
+}
+        """
+
+    # ----------------------------------
+    # ...
+    # ----------------------------------
+    'Adapt ppq component':
+        'prefix': 'ppq'
+        'body': """
+{
+    "_id": "${1:c-00}",
+    "_parentId": "${2:b-00}",
+    "_type": "component",
+    "_component": "ppq",
+    "_classes": "",
+    "_layout": "${3:full}",
+    "_canShowModelAnswer": true,
+    "_shouldDisplayAttempts": false,
+    "_attempts": ${4:1},
+    "_questionWeight": 1,
+    "_developerMode": true,
+    "title": "${5:TITLE}",
+    "displayTitle": "${5:TITLE}",
+    "body": "${6:BODY}",
+    "instruction": "${7:INSTRUCTION}",
+    "_pinboardDesktop": {
+        "src": "course/en/images/${1:c-00}.jpg",
+        "alt": "",
+        "title": ""
+    },
+    "_pinboardMobile": {
+        "src": "course/en/images/${1:c-00}-mobile.jpg",
+        "alt": "",
+        "title": ""
+    },
+    "_items": [
+        {
+            "desktop": {
+                "left": 20,
+                "top": 48,
+                "width": 10,
+                "height": 10
+            },
+            "mobile": {
+                "left": 20,
+                "top": 70,
+                "width": 20,
+                "height": 20
+            }
+        },
+        {
+            "desktop": {
+                "left": 40,
+                "top": 48,
+                "width": 10,
+                "height": 10
+            },
+            "mobile": {
+                "left": 40,
+                "top": 40,
+                "width": 20,
+                "height": 20
+            }
+        },
+        {
+            "desktop": {
+                "left": 60,
+                "top": 48,
+                "width": 10,
+                "height": 10
+            },
+            "mobile": {
+                "left": 60,
+                "top": 10,
+                "width": 20,
+                "height": 20
+            }
+        }
+    ],
+    "_feedback": {
+        "correct": "${8:CORRECT}",
+        "_incorrect": {
+            "notFinal": "",
+            "final": "${9:INCORRECT}"
+        },
+        "_partlyCorrect": {
+            "notFinal": "",
+            "final": "${10:PARTIAL}"
+        }
+    },
+    "_buttons": {
+        "_submit": {
+            "buttonText": "Submit",
+            "ariaLabel": "Select here to submit your answer."
+        },
+        "_reset": {
+            "buttonText": "Reset",
+            "ariaLabel": ""
+        },
+        "_showCorrectAnswer": {
+            "buttonText": "Correct Answer",
+            "ariaLabel": ""
+        },
+        "_hideCorrectAnswer": {
+            "buttonText": "My Answer",
+            "ariaLabel": ""
+        },
+        "_showFeedback": {
+            "buttonText": "Show feedback",
+            "ariaLabel": ""
+        },
+        "remainingAttemptsText": "attempts remaining",
+        "remainingAttemptText": "final attempt"
+    },
+    "_pageLevelProgress": {
+        "_isEnabled": true
+    }
+}
+        """
+
+#     # ----------------------------------
+#     # ...
+#     # ----------------------------------
+#     'Adapt ... component':
+#         'prefix': '...'
+#         'body': """
+# {
+#     ...
+# }
+#         """

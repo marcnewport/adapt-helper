@@ -1,0 +1,6 @@
+{
+  "atom-workspace": {
+    "ctrl-alt-'": "adapt-helper:clean-text",
+    "ctrl-alt-v": "adapt-helper:paste-clean-text"
+  }
+}

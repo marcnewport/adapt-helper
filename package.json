@@ -1,0 +1,19 @@
+{
+  "name": "adapt-helper",
+  "main": "./lib/adapt-helper",
+  "version": "0.0.0",
+  "description": "Shortcuts and snippets for Atom to help you with your Adapt Framework project",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "adapt-helper:clean-text",
+    "atom-workspace": "adapt-helper:paste-clean-text"
+  },
+  "repository": "https://github.com/marcnewport/adapt-helper",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
