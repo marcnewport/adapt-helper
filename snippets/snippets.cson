@@ -773,7 +773,7 @@
         """
 
     # ----------------------------------
-    # ...
+    # ... Pin point question
     # ----------------------------------
     'Adapt ppq component':
         'prefix': 'ppq'
@@ -882,6 +882,89 @@
         },
         "remainingAttemptsText": "attempts remaining",
         "remainingAttemptText": "final attempt"
+    },
+    "_pageLevelProgress": {
+        "_isEnabled": true
+    }
+}
+        """
+
+    # ----------------------------------
+    # confidenceSlider
+    # ----------------------------------
+    'Adapt confidenceSlider component':
+        'prefix': 'confidenceSlider'
+        'body': """
+{
+    "_id": "${1:c-00}",
+    "_parentId": "${2:b-00}",
+    "_type": "component",
+    "_component": "confidenceSlider",
+    "_classes": "",
+    "_layout": "full",
+    "title": "${3:TITLE}",
+    "displayTitle": "${3:TITLE}",
+    "body": "${4:BODY}",
+    "disabledBody": "You need to measure your confidence in the linked part before you can do this part.",
+    "instruction": "",
+    "_attempts": 1,
+    "_canShowFeedback": true,
+    "_recordInteraction": true,
+    "_shouldStoreResponses": false,
+    "_linkedToId": "${5:c-00}",
+    "_showNumber": true,
+    "_showScaleIndicator": true,
+    "_showScale": true,
+    "labelStart": "incomplete",
+    "labelEnd": "complete",
+    "_scaleStart": 0,
+    "_scaleEnd": 10,
+    "_scaleStep": 1,
+    "_buttons": {
+        "_submit": {
+            "buttonText": "Submit",
+            "ariaLabel": "Submit your answer by clicking here."
+        },
+        "_reset": {
+            "buttonText": "Reset",
+            "ariaLabel": "Reset the question by clicking here."
+        },
+        "_showFeedback": {
+            "buttonText": "Show feedback",
+            "ariaLabel": "View the question feedback again by clicking here."
+        }
+    },
+    "_feedback": {
+        "feedbackSeparator": " ",
+        "generic": "Thanks for measuring your confidence.",
+        "_comparison": {
+            "lower": "Oh you like it less? That's a shame.",
+            "same": "Well, at least you don't like it less.",
+            "higher": "It looks like you're seeing the benefits more and more!"
+        },
+        "_threshold": [
+            {
+                "_values": {
+                    "_low": 0,
+                    "_high": 3
+                },
+                "text": "${6:LOW_THRESHOLD}"
+            },
+            {
+                "_values": {
+                    "_low": 4,
+                    "_high": 6
+                },
+                "text": "${7:MEDIUM_THRESHOLD}"
+            },
+            {
+                "_values": {
+                    "_low": 7,
+                    "_high": 10
+                },
+                "text": "${8:HIGH_THRESHOLD}"
+            }
+        ]
     },
     "_pageLevelProgress": {
         "_isEnabled": true

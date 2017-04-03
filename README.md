@@ -38,6 +38,7 @@ Start typing the snippets below to populate a json file with corresponding json 
 `slider`
 `text`
 `textinput`
+`confidenceSlider`
 `ppq`
 
 ![helper-snippet](https://cloud.githubusercontent.com/assets/951725/24481760/61b0718c-1538-11e7-8eb8-28594444bd27.gif)
