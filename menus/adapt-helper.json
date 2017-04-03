@@ -2,7 +2,7 @@
     "context-menu": {
         "atom-text-editor": [
             {
-                "label": "Adapt helper: clean text",
+                "label": "Adapt helper: clean selected text",
                 "command": "adapt-helper:clean-text"
             },
             {
@@ -16,11 +16,15 @@
             "label": "Packages",
             "submenu": [
                 {
-                    "label": "adapt-helper",
+                    "label": "Adapt helper",
                     "submenu": [
                         {
-                            "label": "Toggle",
-                            "command": "adapt-helper:toggle"
+                            "label": "Clean selected text",
+                            "command": "adapt-helper:clean-text"
+                        },
+                        {
+                            "label": "Paste as clean text",
+                            "command": "adapt-helper:paste-clean-text"
                         }
                     ]
                 }
