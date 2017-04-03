@@ -1,7 +1,7 @@
 {
   "name": "adapt-helper",
   "main": "./lib/adapt-helper",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shortcuts and snippets for Atom to help you with your Adapt Framework project",
   "keywords": [],
   "activationCommands": {
